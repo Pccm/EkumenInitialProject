@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myappSend">
+<head>
+	<meta charset="UTF-8">
+	<title>Simulator To send data</title>
+	
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<!-- bootstrap 3.3.6 ccs-->
+	<link rel="stylesheet" href="../content/bootstrap.min.css">
+
+	<style type="text/css">
+
+		.textboxSize{
+			width: 50px;
+		}
+		h2{
+			text-align: center;
+		}
+
+	</style>
+
+	
+</head>
+
+<body ng-controller="controlSend">
+	<header>
+		<h2>Simulator To send data</h2>
+		<p>This web page simulate the sending of data since the hardware via GPRS and protocol HTTP to web page "MONITORING SYSTEM OVERFLOWS" </p>
+
+		<p>Only Select a device and fill the textbox with a float number and push the button send for each one you want to send</p>
+
+		<p>For this purpose, We have 7 devices to send Its data.</p>
+
+	</header>
+
+	<div class="container">
+		<div class="row">
+
+			<div>
+
+				Select Device :  
+
+				<select name="singleSelect" ng-model="nameSelect">
+					<option ng-repeat="device in Devices">
+						{{device.name}}
+					</option>
+				</select>
+
+				Number :  
+				<input type="textbox" class="textboxSize" ng-model="number" >
+				<button class="btn btn-success" ng-click="sendData()">Send</button>
+
+				{{ result}}
+
+			</div>	
+
+		</div>
+	</div>
+
+
+	<script src="../scripts/jquery.min.js"></script>
+	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/angularjs.min.js"></script>
+
+	<script type="text/javascript">
+
+		angular.module("myappSend",[])
+		.controller("controlSend",function($scope,$http){
+
+			$scope.number = "5.6";
+			$scope.Devices = [
+				{name : "Ucayali",id:"SNR058964"},
+				{name : "Ramis",id:"SNR568478"},
+				{name : "Rimac",id:"SNR258469"},
+				{name : "Paron",id:"SNR014528"},
+				{name : "Pucucha",id:"SNR578965"},
+				{name : "Pomacanchi",id:"SNR748501"},
+				{name : "Junin",id:"SNR963023"}
+			];
+
+			$scope.sendData = function(){
+				value = parseFloat($scope.number);
+
+				if($scope.nameSelect == null){
+					alert("Please select any device"); 
+					$scope.result = "Error";
+				}
+				else{
+
+					if(!isNaN(value))
+					{
+
+						for (i = 0; i < $scope.Devices.length; i++){
+			                if($scope.Devices[i].name == $scope.nameSelect.trim())
+			                {
+
+			                  		$http.get("../../server/bufferData.php?data="+$scope.Devices[i].id+","+$scope.number)
+									.success(function(data){
+										$scope.result = data;
+									})
+									.error(function(err){
+										$scope.result = err;
+									});
+
+									break;
+			                }
+			            }
+					}
+					else{
+
+						alert("Please valid number"); 
+						$scope.result = "Error";
+					}
+				}
+			};
+
+		});
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Monitoring System Overflows Lakes/Rivers</title>
+
+	<!-- This is neccesary to bootstrap responsive -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- bootstrap 3.3.6 ccs-->
+	<link rel="stylesheet" href="content/bootstrap.min.css">
+
+	<!-- styles generate-->
+	<link rel="stylesheet" href="content/stylesMain.css">
+
+</head>
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationBar">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="" class="navbar-brand text-uppercase">Monitoring System Overflows</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="container-fluid"  ng-controller="controlController as ctrl">
+		<section class="main row">
+			<div class="col-xs-12 col-sm-5 col-md-4">
+				<p class="label-custom text-center">INFORMATION</p>
+				<div class="text-center">
+					<label class="bg-info">
+						Drought
+					</label>
+
+					<label class="bg-success">
+						Normal
+					</label>
+
+					<label class="bg-danger">
+						Overflow
+					</label>
+				</div>
+				
+				<div class="text-center">
+
+					Select Device: 
+
+					<select name="singleSelect" ng-model="ctrl.nameSelected">
+						<option ng-repeat="datadevice in ctrl.dataDevices" ng-click="ctrl.viewDataDevice()" class="{{datadevice.colorDevice}}" id="{{datadevice.name}}">{{datadevice.name}}</option>
+					</select>
+
+
+				</div>	
+
+
+				<p class="label-custom text-center">Address</p>
+				<p>{{ctrl.address}}</p>
+				<p class="label-custom text-center">Description</p>
+				<p>{{ctrl.description}}</p>
+				<p class="label-custom text-center">Limit</p>
+				<table class="table text-center" id="tableStyle">
+					<tr>
+						<td>Lower Limit</td>
+						<td>Current</td>
+						<td>Upper Limit</td>
+					</tr>
+					<tr>
+						<td>{{ctrl.lowerlimit}}</td>
+						<td id="colorCurrent">{{ctrl.current}}</td>
+						<td>{{ctrl.upperlimit}}</td>
+					</tr>
+				</table>
+
+
+				<p class="label-custom text-center">Data Real Time</p>
+
+				<!-- Here I will put the graphic in real time-->
+
+    			<div id="chart" class="big-chart"></div>
+
+			</div>
+			<aside class="col-xs-12 col-sm-7 col-md-8" id="asideStyle">
+				<div id="mapMain"></div>
+			</aside>
+
+		</section>
+
+	</div>
+
+	
+	<footer >
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<p class="bg-default" >Developer by PCCM</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- angularjs 1.4.8, bootstrap 3.3.6 and jquery 1.11.3 javascript-->
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/angularjs.min.js"></script>
+	<script src="scripts/jquery.flot.min.js"></script>
+
+	<script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+	<script src="app/app.module.js"></script>
+	<script src="app/googlemap.factory.js"></script>
+	<script src="app/server.factory.js"></script>
+	<script src="app/plot.factory.js"></script>
+	<script src="app/control.controller.js"></script>
+	
+	
+	
+
+	
+</body>
+</html>

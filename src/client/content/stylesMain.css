@@ -1,0 +1,97 @@
+
+/* To generate this code CCS to navbar I used the tool: http://work.smarchal.com/twbscolor/css */
+
+.navbar-default {
+  background-color: #0a7bef;
+  border-color: #f7f7ff;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #144fb7;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #144fb7;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #144fb7;
+  background-color: #f7f7ff;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #144fb7;
+  background-color: #f7f7ff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #f7f7ff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #1E348F;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #144fb7;
+}
+
+
+
+/* Css to footer*/
+.bg-default{
+	background-color: #0a7bef;
+	color: #FFFFFF;
+}
+
+
+/* CCS to graphic */
+.big-chart {
+  width:100%;
+  height:220px;
+}
+
+/* CSS to google maps */
+
+#mapMain{
+  height: 610px;
+}
+
+/* CSS to navbar to eliminate the margin bottom*/
+.navbar{
+      margin-bottom: 0px;
+}
+
+/* CSS to title of data in principal screen */
+
+.label-custom{
+  background-color: #F3A805;
+  color: white;
+}
+
+
+/* CSS to eliminate the margin-bottom of table*/
+#tableStyle{
+
+  margin-bottom:0px;
+}
+
+/* CSS to eliminate the padding in the map*/
+#asideStyle{
+  padding-left:0px;padding-right:0px;
+}
+    
+
+
