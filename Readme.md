@@ -10,7 +10,7 @@ This app is a "Monitoring System Overflows Lakes/Rivers", this web shows data ab
 * app.module.js - principal module.
 * control.controller.js - principal controller
 * googlemap.factory.js - service for management google maps
-* plot.factory.js - service for draw grpahic in real time
+* plot.factory.js - service for draw grpahic in real time.
 * server.factory.js - service for get data about sensors.
 * stylesMain.css - styles add for this web.
 * getDataDevices.php - get data of database, information about all devices and current altitude of river/lagoon
