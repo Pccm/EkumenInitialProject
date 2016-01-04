@@ -29,12 +29,10 @@ This app is a "Monitoring System Overflows Lakes/Rivers", this web shows data ab
 
 You can test this project of 2 different ways:
 
-    import the database "initekumenapp.sql" and change "user" and "password" in the files PHP.
-
+* import the database "initekumenapp.sql" and change "user" and "password" in the files PHP.
 ```sh
 //$connection = mysql_connect("Address Host","user","password");
 $connection = mysql_connect("localhost","root","pablo");
 ```
-
-    or enter to this page to test it [http://www.zacetrex.com/pabloFiles/AppStartEkumen/src/client] and optionally this page [http://www.zacetrex.com/pabloFiles/AppStartEkumen/src/client/test/simulatorSensors.html] to simulate the send of data.
+* or enter to this page to test it [http://www.zacetrex.com/pabloFiles/AppStartEkumen/src/client] and optionally this page [http://www.zacetrex.com/pabloFiles/AppStartEkumen/src/client/test/simulatorSensors.html] to simulate the send of data.
 
